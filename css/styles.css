@@ -3,6 +3,7 @@
   --primary-color: #434455;
   --secondary-color: #2e2f42;
   --basic-white-color: #ffffff;
+  --250ms-animation: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 h1,
@@ -142,10 +143,9 @@ body {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
-
   color: var(--secondary-color);
+  transition: var(--250ms-animation);
 }
-
 .menu-link:hover,
 .menu-link:focus {
   color: var(--accent-color);
@@ -155,8 +155,8 @@ body {
   font-style: normal;
   line-height: 1.5;
   letter-spacing: 0.02em;
-
   color: var(--primary-color);
+  transition: var(--250ms-animation);
 }
 
 .contact-link:hover,
@@ -230,6 +230,8 @@ body {
 
   color: #ffffff;
   background-color: #4d5ae5;
+
+  transition: var(--250ms-animation);
 }
 
 .modal-btn:hover,
@@ -318,6 +320,8 @@ body {
   height: 40px;
   border-radius: 50%;
   background-color: #4d5ae5;
+
+  transition: var(--250ms-animation);
 }
 
 .social-list-link:hover,
@@ -350,6 +354,8 @@ body {
   border: 1px solid #8e8f99;
   border-radius: 4px;
   fill: #8e8f99;
+
+  transition: var(--250ms-animation);
 }
 
 .customers-list-link:hover,
@@ -429,6 +435,8 @@ body {
 
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
+
+  transition: var(--250ms-animation);
 }
 
 .footer-social-list-link:hover,
@@ -437,6 +445,63 @@ body {
 }
 
 /* ============= /ФУТУЕР =============*/
+
+/* ============= МОДАЛЬНОЕ ОКНО =============*/
+.backdrop {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 408px;
+  height: 576px;
+  background: #fcfcfc;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.modal-close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  background: #e7e9fc;
+  fill: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.icon-close-modal-btn:hover,
+.icon-close-modal-btn:focus,
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  transition: var(--250ms-animation);
+  background: var(--accent-color);
+  fill: #ffffff;
+}
+/* ============= /МОДАЛЬНОЕ ОКНО =============*/
 
 /* ========== СТИЛИ ДЛЯ ПОРТФОЛИО ========== */
 
@@ -462,6 +527,8 @@ body {
   cursor: pointer;
 
   color: #4d5ae5;
+
+  transition: var(--250ms-animation);
 }
 
 .menu-btn:hover,
