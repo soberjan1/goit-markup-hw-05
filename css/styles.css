@@ -151,7 +151,7 @@ body {
   transition: color var(--250ms-animation);
 }
 
-.menu-link-studio::after {
+.current::after {
   position: absolute;
   left: 0;
   top: 45px;
@@ -166,9 +166,9 @@ body {
   opacity: 1;
 }
 
-/* .menu-link:hover::after {
-  opacity: 1;
-} */
+.current { 
+  color: var(--accent-color);
+}
 
 .menu-link:hover,
 .menu-link:focus {
@@ -379,7 +379,7 @@ body {
   border-radius: 4px;
   fill: #8e8f99;
 
-  transition: fill border var(--250ms-animation);
+  transition: border var(--250ms-animation), fill var(--250ms-animation);
 }
 
 .customers-list-link:hover,
@@ -479,13 +479,13 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(46, 47, 66, 0.4);
+  transition: visibility var(--250ms-animation), opacity var(--250ms-animation);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity visibility var(--250ms-animation);
 }
 
 .modal {
@@ -569,7 +569,8 @@ body {
 
   color: #4d5ae5;
 
-  transition: color background-color box-shadow var(--250ms-animation);
+  transition: color var(--250ms-animation),
+  background-color var(--250ms-animation), box-shadow var(--250ms-animation);
 }
 
 .menu-btn:hover,
